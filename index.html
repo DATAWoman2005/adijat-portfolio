@@ -334,10 +334,18 @@ svg{display:block}
   transform:rotate(-1deg);
 }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.25rem;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* Make the featured project occupy the full first row */
+.card.featured {
+  grid-column: 1 / -1;
+  min-height: 240px;
+}
+
 }
 .card{
   position:relative;
@@ -598,11 +606,10 @@ footer{
     </div>
 
     <div class="portrait">
-      <span class="portrait-tag">your photo</span>
       <div class="portrait-frame">
         <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#doc"/></svg>
         <strong>Portrait placeholder</strong>
-        <span> "C:\Data_Science\photohead.png"</span>
+        <span>https://github.com/DATAWoman2005/adijat-portfolio/blob/main/photohead.png?raw=true</span>
       </div>
     </div>
 
@@ -621,57 +628,130 @@ footer{
   </div>
 </div>
 
+
 <section class="portfolios">
   <div class="wrap">
 
     <div class="section-head">
-      <span class="eyebrow">Portfolio hub</span>
-      <h2>Follow a thread</h2>
-      <p>Each card will eventually open a dedicated dashboard with the full project, methods, visuals and findings.</p>
-      <span class="hand">three different questions. one professional story.</span>
+      <span class="eyebrow">Portfolio Hub</span>
+
+      <h2>Selected Work &amp; Research</h2>
+
+      <p>
+        From public health analytics to behavioural
+        science and machine learning, my projects
+        explore how data can illuminate complex
+        human and social challenges.
+      </p>
+
+      <span class="hand">
+        curiosity meets data. evidence meets humanity.
+      </span>
     </div>
 
     <div class="cards">
 
-      <!-- Replace with your dissertation dashboard URL -->
-      <a class="card research" href="dissertation-dashboard.html">
-        <div class="card-icon">
-          <svg width="29" height="29" viewBox="0 0 64 64" aria-hidden="true"><use href="#scatter"/></svg>
-        </div>
-        <small>Research + NLP</small>
-        <h3>Digital Suicide Prevention Research</h3>
-        <p>My MSc dissertation: evidence mapping, NLP, representation of high-risk adolescents, validation and research communication.</p>
-        <span class="go">Open dedicated dashboard ↗</span>
-        <span class="note">who is represented?</span>
-      </a>
+      <!-- PROJECT 1: FEATURED -->
+      <div class="card research featured">
 
-      <!-- Replace with your clinical analytics dashboard URL -->
-      <a class="card clinical" href="clinical-dashboard.html">
         <div class="card-icon">
-          <svg width="34" height="29" viewBox="0 0 96 48" aria-hidden="true"><use href="#pulse"/></svg>
+          <svg width="29" height="29"
+               viewBox="0 0 64 64"
+               aria-hidden="true">
+            <use href="#bars"/>
+          </svg>
         </div>
-        <small>Clinical analytics</small>
-        <h3>Psychiatric Outcomes &amp; Real-World Data</h3>
-        <p>A synthetic psychiatric-clinic portfolio covering relational database design, longitudinal outcomes, SQL, R and treatment evaluation.</p>
-        <span class="go">Open dedicated dashboard ↗</span>
-        <span class="note">what changed?</span>
-      </a>
 
-      <!-- Replace with your privacy dashboard URL -->
-      <a class="card privacy" href="privacy-dashboard.html">
+        <small>Public Health Analytics · Completed</small>
+
+        <h3>Canadian Opioid Harms</h3>
+
+        <p>
+          An interactive Power BI analysis examining
+          opioid-related harms across Canada, with
+          particular attention to Saskatchewan,
+          geographic differences, trends, and
+          statistical interpretation.
+        </p>
+
+        <span class="go">
+          Power BI · DAX · Public Health Data
+        </span>
+
+        <span class="note">
+          what does the evidence reveal?
+        </span>
+      </div>
+
+
+      <!-- PROJECT 2: MIRROR MIRROR -->
+      <div class="card clinical">
+
         <div class="card-icon">
-          <svg width="29" height="29" viewBox="0 0 64 64" aria-hidden="true"><use href="#lock"/></svg>
+          <svg width="29" height="29"
+               viewBox="0 0 64 64"
+               aria-hidden="true">
+            <use href="#scatter"/>
+          </svg>
         </div>
-        <small>Responsible data</small>
-        <h3>Privacy-Aware Clinical Analytics</h3>
-        <p>Pseudonymisation, data minimisation, crosswalk separation and safe movement from clinical records to analysis-ready data.</p>
-        <span class="go">Open dedicated dashboard ↗</span>
-        <span class="note">identity stays protected.</span>
-      </a>
+
+        <small>Behavioural Data Science · In Progress</small>
+
+        <h3>Mirror Mirror</h3>
+
+        <p>
+          Exploring social role theory and
+          psychological distress through Canadian
+          survey data, explanatory regression,
+          and predictive machine learning.
+        </p>
+
+        <span class="go">
+          Python · Statistics · Machine Learning
+        </span>
+
+        <span class="note">
+          beyond the roles we play
+        </span>
+      </div>
+
+
+      <!-- PROJECT 3: MSC RESEARCH -->
+      <div class="card privacy">
+
+        <div class="card-icon">
+          <svg width="29" height="29"
+               viewBox="0 0 64 64"
+               aria-hidden="true">
+            <use href="#brain"/>
+          </svg>
+        </div>
+
+        <small>Academic Research · Completed</small>
+
+        <h3>Mapping Suicide-Prevention Evidence</h3>
+
+        <p>
+          My MSc dissertation used natural language
+          processing to map suicide-prevention
+          research involving high-risk adolescents,
+          combining evidence synthesis with
+          computational methods.
+        </p>
+
+        <span class="go">
+          NLP · R · Python · Evidence Mapping
+        </span>
+
+        <span class="note">
+          who is represented?
+        </span>
+      </div>
 
     </div>
   </div>
 </section>
+
 
 <section class="threads">
   <div class="wrap threads-grid">
