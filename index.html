@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Adijat Adenaike — Health Data × Mental Health</title>
-<meta name="description" content="Adijat Adenaike — health data, mental health, clinical outcomes, real-world evidence, NLP, and privacy-aware analytics.">
+<title>Adijat Adenaike — Health Data Science × Behavioural Science</title>
+<meta name="description" content="Adijat Adenaike — statistical analysis, machine learning, behavioural science, public health analytics and human-centred evidence.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -506,56 +506,56 @@ footer{
   text-align:right;
 }
 
-/* Tablets and smaller screens */
-@media (max-width: 920px) {
-  .topbar .wrap {
-    align-items: flex-start;
-    padding: 1rem 0;
-    flex-direction: column;
-  }
-
-  .quick-links {
-    justify-content: flex-start;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portrait {
-    justify-self: start;
-    margin-top: 1rem;
-    transform: none;
-  }
-
-  .portrait-tag {
-    display: none;
-  }
-
-  .cards,
-  .threads-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card.featured {
-    grid-column: 1;
-  }
-
-/* Mobile phones */
-@media (max-width: 560px) {
-  .quick-link {
-    padding: .43rem .72rem;
-    font-size: .75rem;
-  }
-
-  .hero h1 {
-    font-size: 3.15rem;
-  }
-
-  .portrait {
-    width: 270px;
-  }
+/* Accessible focus and clear project navigation */
+:focus-visible { outline:3px solid var(--violet); outline-offset:4px; }
+#projects { scroll-margin-top:100px; }
+.hero h1 { font-size:clamp(3rem,5.6vw,4.75rem); line-height:1.01; }
+.hero { padding:clamp(2.8rem,5vw,4.4rem) 0; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.45rem; }
+.hero-actions a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.65rem 1.1rem; font:800 .9rem var(--display); text-decoration:none; border:1.7px solid var(--line); border-radius:var(--sketch); transition:transform .16s ease; }
+.hero-actions a:hover { transform:translateY(-2px); }
+.action-primary { background:var(--ink); color:#fff; }
+.action-secondary { background:#fff; }
+.menu-toggle { display:none; font:800 .85rem var(--display); padding:.5rem .75rem; background:#fff; border:1.5px solid var(--line); border-radius:12px; cursor:pointer; }
+/* Prevent long text and grid children from forcing page width */
+.hero-grid > *, .brand-copy, .card, .thread { min-width:0; }
+.brand-copy span { overflow-wrap:anywhere; }
+@media (max-width:920px) {
+  .hero-grid { grid-template-columns:1fr; gap:1.5rem; }
+  .portrait { justify-self:center; margin-top:.25rem; transform:none; }
+  .portrait-tag { display:none; }
+  .cards,.threads-grid { grid-template-columns:1fr; }
+  .card.featured { grid-column:1; }
+  .topbar .wrap { min-height:0; }
 }
+@media (max-width:560px) {
+  .wrap { width:min(100% - 2rem,var(--max)); }
+  .topbar .wrap { display:flex; flex-direction:row; align-items:center; gap:.6rem; padding:.65rem 0; flex-wrap:wrap; }
+  .brand { flex:1; gap:.55rem; }
+  .brand-icon { width:32px; height:32px; }
+  .brand-copy strong { font-size:1rem; line-height:1.15; }
+  .brand-copy span { font-size:.57rem; line-height:1.3; letter-spacing:.025em; margin-top:.12rem; }
+  .menu-toggle { display:block; flex:none; }
+  .quick-links { display:none; flex-basis:100%; width:100%; padding:.4rem 0 .2rem; gap:.45rem; justify-content:flex-start; }
+  .quick-links.is-open { display:flex; }
+  .quick-link { padding:.45rem .75rem; font-size:.78rem; }
+  .hero { padding:1.65rem 0 2.3rem; }
+  .hero-grid { gap:1.5rem; }
+  .hero h1 { font-size:clamp(2.3rem,9vw,2.8rem); line-height:1.05; letter-spacing:-.035em; }
+  .kicker { font-size:1.05rem; line-height:1.4; }
+  .squiggle { margin:.65rem 0 1rem; }
+  .lede { font-size:.98rem; line-height:1.6; }
+  .place { margin-top:1rem; font-size:.77rem; line-height:1.5; }
+  .hero-note { margin-top:.8rem; }
+  .portrait { width:min(260px,80vw); justify-self:center; margin-top:0; transform:none; }
+  .portrait-frame { aspect-ratio:4/4.5; }
+  .card { min-height:0; padding:1.5rem 1.25rem; }
+  .card.featured { min-height:0; }
+  .footer-row { flex-direction:column; align-items:flex-start; }
+  .footer-copyright { text-align:left; }
+  #projects { scroll-margin-top:90px; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
 </style>
 </head>
 
@@ -610,17 +610,18 @@ footer{
       </span>
       <span class="brand-copy">
         <strong>Adijat Adenaike</strong>
-        <span>Health Data Analyst · Registered Social Worker</span>
+        <span>Health Data Science · Behavioural Science · Social Work</span>
       </span>
     </a>
 
-    <div class="quick-links">
+    <button class="menu-toggle" type="button" aria-controls="primary-links" aria-expanded="false" aria-label="Open profile links">Menu <span aria-hidden="true">☰</span></button>
+    <nav class="quick-links" id="primary-links" aria-label="Profile links">
       <!-- Replace placeholders with your real links -->
       <a class="quick-link email" href="mailto:jokekosoko@yahoo.com">email</a>
       <a class="quick-link linkedin" href="https://www.linkedin.com/in/adijat-adenaike/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="quick-link github" href="https://github.com/DATAWoman2005" target="_blank" rel="noopener">GitHub</a>
       <a class="quick-link resume" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
-    </div>
+    </nav>
   </div>
 </header>
 
@@ -630,7 +631,7 @@ footer{
   <div class="wrap hero-grid">
 
     <div>
-      <p class="kicker">hi, I’m Adijat — social worker + health data analyst</p>
+      <p class="kicker">hi, I’m Adijat.</p>
 
       <h1>
         <span class="line">Health data with</span>
@@ -642,9 +643,11 @@ footer{
           fill="none" stroke="#F03E92" stroke-width="3" stroke-linecap="round"/>
       </svg>
 
-      <p class="lede">I work where <strong>mental health, clinical data and evidence</strong> meet — asking practical questions about outcomes, real-world care and responsible data use without forgetting there is a person behind every row.</p>
+      <p class="lede">I combine <strong>statistical analysis, machine learning, and behavioural science</strong> to investigate complex health and social challenges—and translate findings into evidence that supports better decisions.</p>
 
-      <p class="place">MSc Data Science for Health &amp; Social Care, University of Edinburgh — dissertation submitted</p>
+      <p class="place">MSc Data Science for Health &amp; Social Care · University of Edinburgh</p>
+
+      <div class="hero-actions"><a class="action-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a><a class="action-secondary" href="mailto:jokekosoko@yahoo.com">Get in touch</a></div>
 
       <span class="hero-note">the question comes before the model.</span>
     </div>
@@ -675,11 +678,11 @@ footer{
 </div>
 
 
-<section class="portfolios">
+<section class="portfolios" id="projects">
   <div class="wrap">
 
     <div class="section-head">
-      <span class="eyebrow">Portfolio Hub</span>
+      <span class="eyebrow">Selected projects</span>
 
       <h2>Selected Work &amp; Research</h2>
 
@@ -717,7 +720,7 @@ footer{
         <h3>Canadian Opioid Harms</h3>
 
         <p>
-          An interactive Power BI analysis examining
+          A Power BI analysis examining
           opioid-related harms across Canada, with
           particular attention to Saskatchewan,
           geographic differences, trends, and
@@ -725,7 +728,7 @@ footer{
         </p>
 
         <span class="go">
-          Power BI · DAX · Public Health Data
+          View project report and findings ↗ · Power BI · DAX
         </span>
         
       <span class="note">
@@ -855,7 +858,22 @@ footer{
   </div>
 </footer>
 
+<script>
+  const menuButton = document.querySelector('.menu-toggle');
+  const profileLinks = document.querySelector('#primary-links');
+  menuButton.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!expanded));
+    menuButton.setAttribute('aria-label', expanded ? 'Open profile links' : 'Close profile links');
+    profileLinks.classList.toggle('is-open', !expanded);
+  });
+  profileLinks.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      profileLinks.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open profile links');
+    }
+  });
+</script>
 </body>
 </html>
-
-
